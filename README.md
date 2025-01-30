@@ -1,16 +1,60 @@
-# wifi_signal_mapping
+# Wi-Fi Signal Strength Data Collection App
 
-A new Flutter project.
+## Overview
+This Flutter application collects Wi-Fi signal strength data and visualizes it on a 3D map using `mapbox_maps_flutter`. The app consists of three main screens:
 
-## Getting Started
+1. **3D Room Map** – Displays a basic 3D map of the space.
+2. **Measurement Screen** – Captures and displays the Wi-Fi signal strength.
+3. **Overlay Screen** – Displays the captured signal strength data on the map.
 
-This project is a starting point for a Flutter application.
+## Features
+- Uses the `wifi_scan` plugin to access Wi-Fi information.
+- Records Wi-Fi signal strength (dBm) at different locations.
+- Implements a background service to continue data collection.
+- Stores collected data in a local database.
+- Visualizes the signal strength overlay on a 3D map.
 
-A few resources to get you started if this is your first Flutter project:
+## Installation
+### Prerequisites
+- Flutter SDK installed
+- Android/iOS Emulator or Physical Device
+- API keys for Mapbox (for `mapbox_maps_flutter` integration)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Steps
+1. Clone the repository:
+   ```sh
+   git clone git@github.com:KevinShingala/wifi_signle_app.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd wifi_signle_app
+   ```
+3. Install dependencies:
+   ```sh
+   flutter pub get
+   ```
+4. Run the app:
+   ```sh
+   flutter run
+   ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Dependencies
+```yaml
+  provider: ^6.1.2
+  mapbox_maps_flutter: ^2.5.1
+  wifi_scan: ^0.4.1+1
+  workmanager: ^0.5.2
+  sqflite: ^2.4.1
+  latlong2: ^0.9.1
+  geolocator: ^13.0.2
+```
+
+## App Flow
+1. **Screen 1: Map View**
+   - Displays a 3D map with room overlays.
+2. **Screen 2: Measurement Screen**
+   - Shows real-time signal strength.
+   - "Capture" button stores signal strength data.
+3. **Screen 3: Signal Strength Overlay**
+   - Displays the map with overlaid signal strength values.
+
